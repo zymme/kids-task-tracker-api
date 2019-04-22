@@ -1,0 +1,68 @@
+#%RAML 1.0
+title: Kids Behavior/Task Tracker API
+baseUri: http://localhost:8081/
+
+
+/kids:
+  description: Resource to manage kids behviors and tasks (good and bad)
+  
+  
+  post:
+    description: create a kid resource entry
+    body: 
+      application/json:
+        example: | 
+          {
+            "firstName": "kiddo1",
+            "lastName": "kiddo-lastname",
+            "birthDate": "yyyy-MM-dd",
+            "email": "some-email@test.com",
+            "mobile": "999-999-9999",
+            "address": "2029 main street"
+          }
+          
+    responses:
+      201:
+        body:
+          application/json:
+          
+  patch:
+    description: Update a kid resource
+    body:
+      application/json:
+        example: |
+          {
+            "firstName": "kiddo1a",
+            "lastName": "changeme-lastname"    
+          }
+          
+  delete:
+    description: Removes a kids resource from the system
+          
+          
+          
+  /behavior/{id}:
+    post:
+      body:
+        application/json:
+          example: |
+            {
+              "behavior": "Quit playing when asked",
+              "datetime": "2019/04/21 15:00",
+              "points": 2
+            }
+            
+      responses:
+        201:
+          body:
+            application/json:
+    
+          
+          
+          
+          
+          
+          
+          
+          
+          
